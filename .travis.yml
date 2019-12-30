@@ -26,5 +26,4 @@ env:
 script:
   - export PATH=$HOME/vim-$VIM_VERSION/bin:$PATH
   - cd $TRAVIS_BUILD_DIR
-  - bundle install
   - rake ci
