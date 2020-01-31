@@ -15,7 +15,9 @@ describe 'default'
     call airline#extensions#default#apply(s:builder, { 'winnr': 1, 'active': 1 })
     let stl = s:builder.build()
     Expect stl =~ 'airline_c_to_airline_a'
-    Expect stl =~ 'airline_a_to_airline_b'
+    if v:version > 703
+      Expect stl =~ 'airline_a_to_airline_b'
+    endif
     Expect stl =~ 'airline_b_to_airline_warning'
     Expect stl =~ 'airline_x_to_airline_z'
     Expect stl =~ 'airline_z_to_airline_y'
