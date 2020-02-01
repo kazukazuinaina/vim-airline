@@ -77,8 +77,8 @@ else
 endif
 
 function! airline#extensions#default#apply(builder, context)
-  let winnr = a:context.winnr
-  let active = a:context.active
+  let winnr = a:context.winnr "1
+  let active = a:context.active "1
 
   if airline#util#getwinvar(winnr, 'airline_render_left', active || (!active && !g:airline_inactive_collapse))
     call s:build_sections(a:builder, a:context, s:layout[0])
@@ -87,7 +87,11 @@ function! airline#extensions#default#apply(builder, context)
     if empty(text)
       let text = ' %f%m '
     endif
-    call a:builder.add_section('airline_c'.(a:context.bufnr), text)
+    if v:version >= 704
+      call a:builder.add_section('airline_c'.(a:context.bufnr), text)
+    else
+      call a:builder.add_section('airline_c'.(a:context.buffer_number), text)
+
   endif
 
   call a:builder.split(s:get_section(winnr, 'gutter', '', ''))

@@ -9,7 +9,6 @@ doautocmd VimEnter
 describe 'default'
   before
     let s:builder = airline#builder#new({'active': 1})
-    echo s:builder
   end
 
   it 'should use the layout'
