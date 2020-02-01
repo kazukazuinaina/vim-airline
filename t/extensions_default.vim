@@ -13,8 +13,6 @@ describe 'default'
 
   it 'should use the layout'
     call airline#extensions#default#apply(s:builder, { 'winnr': 1, 'active': 1 })
-    let debug = s:builder
-    Expect debug =~ ''
     let stl = s:builder.build()
     Expect stl =~ 'airline_c_to_airline_a'
     Expect stl =~ 'airline_a_to_airline_b'
