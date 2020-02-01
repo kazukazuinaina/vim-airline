@@ -9,11 +9,11 @@ doautocmd VimEnter
 describe 'default'
   before
     let s:builder = airline#builder#new({'active': 1})
-    echomsg s:builder
   end
 
   it 'should use the layout'
     call airline#extensions#default#apply(s:builder, { 'winnr': 1, 'active': 1 })
+    Expect s:builder == '{'split': function('5'), 'add_section_spaced': function('6'), 'add_raw': function('8'), 'build': function('12'), 'insert_section': function('9'), 'get_position': function('11'), 'add_section': function('7'), '_sections': [], '_context': {'active': 1, 'left_sep': '', 'right_alt_sep': '', 'right_sep': '', 'left_alt_sep': ''}, 'insert_raw': function('10')}'
     let stl = s:builder.build()
     Expect stl =~ 'airline_c_to_airline_a'
     Expect stl =~ 'airline_a_to_airline_b'
