@@ -77,8 +77,8 @@ else
 endif
 
 function! airline#extensions#default#apply(builder, context)
-  let winnr = a:context.winnr "1
-  let active = a:context.active "1
+  let winnr = a:context.winnr
+  let active = a:context.active
 
   if airline#util#getwinvar(winnr, 'airline_render_left', active || (!active && !g:airline_inactive_collapse))
     call s:build_sections(a:builder, a:context, s:layout[0])
