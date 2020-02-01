@@ -91,7 +91,7 @@ function! airline#extensions#default#apply(builder, context)
       call a:builder.add_section('airline_c'.(a:context.bufnr), text)
     else
       call a:builder.add_section('airline_c'.(a:context.buffer_number), text)
-
+    endif
   endif
 
   call a:builder.split(s:get_section(winnr, 'gutter', '', ''))
