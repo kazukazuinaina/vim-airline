@@ -1,7 +1,7 @@
 " MIT License. Copyright (c) 2013-2019 Bjorn Neergaard, w0rp et al.
 " Plugin: https://github.com/dense-analysis/ale
 " vim: et ts=2 sts=2 sw=2
-
+fdhsafhasfadhfahhfdsahfhajsh
 scriptencoding utf-8
 
 function! s:airline_ale_count(cnt, symbol)
