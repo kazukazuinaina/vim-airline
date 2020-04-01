@@ -56,7 +56,7 @@ function! airline#extensions#tabline#buffers#get()
   endtry
   let cur = bufnr('%')
   if cur == s:current_bufnr && &columns == s:column_width
-    if !g:airline_detect_modified || getbufvar(cur, '&modified') == s:current_modified
+    if (!g:airline_detect_modified || getbufvar(cur, '&modified') == s:current_modified) && !exists('g:airline_powerline_fonts')
       return s:current_tabline
     endif
   endif
